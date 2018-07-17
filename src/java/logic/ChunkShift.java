@@ -12,7 +12,7 @@ public class ChunkShift {
 
     for (int i = 0; i < chunks.length; i++) {
       for (int j = 0; j < chunks.length; j++) {
-        chunks[i][j] = 3*i + j + 1;
+        chunks[j][i] = 3*i + j + 1;
       }
     }
   }
@@ -23,7 +23,7 @@ public class ChunkShift {
     for (int x = 0; x < chunks.length; x++) {
       for (int y = 0; y < chunks.length; y++) {
         if (coordsWithinRenderRadius(x - xShift, y - yShift)) {
-          newChunks[y][x] = chunks[x - xShift][y - yShift];
+          newChunks[y][x] = chunks[y - yShift][x - xShift];
         }
       }
     }
